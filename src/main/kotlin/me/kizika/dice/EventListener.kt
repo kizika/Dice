@@ -1,7 +1,8 @@
 package me.kizika.dice
 
-import me.kizika.dice.InventoryEventChecker.ClickEventcheck
-import me.kizika.dice.InventoryEventChecker.DragEventCheck
+import me.kizika.dice.InventoryEventChecker.clickEventCheck
+import me.kizika.dice.InventoryEventChecker.dragEventCheck
+import me.kizika.dice.InventoryEventChecker.itemFrameClick
 import me.kizika.dice.Util.getColored
 import me.kizika.dice.Util.getNameSpaceKey
 import org.bukkit.event.EventHandler
@@ -9,6 +10,7 @@ import org.bukkit.event.Listener
 import org.bukkit.event.inventory.InventoryClickEvent
 import org.bukkit.event.inventory.InventoryDragEvent
 import org.bukkit.event.player.PlayerDropItemEvent
+import org.bukkit.event.player.PlayerInteractEntityEvent
 import org.bukkit.event.player.PlayerJoinEvent
 import org.bukkit.persistence.PersistentDataType
 
@@ -31,11 +33,16 @@ object EventListener : Listener {
 
     @EventHandler
     fun onInventoryControl(e: InventoryClickEvent){
-        ClickEventcheck(e)
+        clickEventCheck(e)
     }
 
     @EventHandler
     fun onInventoryDrag(e: InventoryDragEvent){
-        DragEventCheck(e)
+        dragEventCheck(e)
+    }
+
+    @EventHandler
+    fun onPlayerInteractEntity(e: PlayerInteractEntityEvent){
+        itemFrameClick(e)
     }
 }
