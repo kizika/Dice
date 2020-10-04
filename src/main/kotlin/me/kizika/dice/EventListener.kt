@@ -1,6 +1,7 @@
 package me.kizika.dice
 
 import me.kizika.dice.Util.getColored
+import me.kizika.dice.Util.getNameSpaceKey
 import org.bukkit.NamespacedKey
 import org.bukkit.NamespacedKey.BUKKIT
 import org.bukkit.event.EventHandler
@@ -21,7 +22,7 @@ object EventListener : Listener {
     @EventHandler
     fun onPlayerRelease(e: PlayerDropItemEvent){
         val p = e.player
-        @Suppress("DEPRECATION") val key = NamespacedKey(BUKKIT,"trade")
+        val key = getNameSpaceKey("trade")
         val ctrade = e.itemDrop.itemStack.itemMeta?.persistentDataContainer?.get(key, PersistentDataType.INTEGER)
         if(ctrade==null||ctrade==0){
             e.isCancelled=true

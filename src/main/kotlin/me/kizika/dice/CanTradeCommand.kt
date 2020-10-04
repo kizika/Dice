@@ -35,7 +35,7 @@ object CanTradeCommand :CommandExecutor {
         }
 
     private fun setCanTrade(MHMeta: ItemMeta, stat: Int): ItemMeta {
-        @Suppress("DEPRECATION") val key = NamespacedKey(NamespacedKey.BUKKIT,"trade")
+        val key = Util.getNameSpaceKey("trade")
         MHMeta.persistentDataContainer.set(key, PersistentDataType.INTEGER,stat)
         return MHMeta
     }

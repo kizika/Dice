@@ -10,6 +10,7 @@ object Util {
     }
 
     fun getNameSpaceKey(ky: String): NamespacedKey{
-        return NamespacedKey.minecraft(ky)
+        @Suppress("DEPRECATION")
+        return NamespacedKey(BUKKIT,ky)
     }
 }
