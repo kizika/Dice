@@ -21,7 +21,6 @@ object EventListener : Listener {
 
     @EventHandler
     fun onPlayerRelease(e: PlayerDropItemEvent){
-        val p = e.player
         val key = getNameSpaceKey("trade")
         val ctrade = e.itemDrop.itemStack.itemMeta?.persistentDataContainer?.get(key, PersistentDataType.INTEGER)
         if(ctrade==null||ctrade==0){
