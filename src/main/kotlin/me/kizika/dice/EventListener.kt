@@ -1,9 +1,13 @@
 package me.kizika.dice
 
+import me.kizika.dice.InventoryEventChecker.ClickEventcheck
+import me.kizika.dice.InventoryEventChecker.DragEventCheck
 import me.kizika.dice.Util.getColored
 import me.kizika.dice.Util.getNameSpaceKey
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
+import org.bukkit.event.inventory.InventoryClickEvent
+import org.bukkit.event.inventory.InventoryDragEvent
 import org.bukkit.event.player.PlayerDropItemEvent
 import org.bukkit.event.player.PlayerJoinEvent
 import org.bukkit.persistence.PersistentDataType
@@ -24,5 +28,15 @@ object EventListener : Listener {
             e.isCancelled=true
             e.player.sendMessage(getColored("&c取引不能アイテムです"))
         }
+    }
+
+    @EventHandler
+    fun onInventoryControl(e: InventoryClickEvent){
+        ClickEventcheck(e)
+    }
+
+    @EventHandler
+    fun onInventoryDrag(e: InventoryDragEvent){
+        DragEventCheck(e)
     }
 }
