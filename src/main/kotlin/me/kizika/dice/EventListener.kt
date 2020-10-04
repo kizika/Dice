@@ -2,12 +2,8 @@ package me.kizika.dice
 
 import me.kizika.dice.Util.getColored
 import me.kizika.dice.Util.getNameSpaceKey
-import org.bukkit.NamespacedKey
-import org.bukkit.NamespacedKey.BUKKIT
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
-import org.bukkit.event.inventory.InventoryClickEvent
-import org.bukkit.event.inventory.InventoryMoveItemEvent
 import org.bukkit.event.player.PlayerDropItemEvent
 import org.bukkit.event.player.PlayerJoinEvent
 import org.bukkit.persistence.PersistentDataType

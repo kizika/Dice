@@ -1,15 +1,13 @@
 package me.kizika.dice
 
-import org.bukkit.NamespacedKey
+import me.kizika.dice.Util.getColored
+import me.kizika.dice.Util.getNameSpaceKey
 import org.bukkit.command.Command
 import org.bukkit.command.CommandExecutor
 import org.bukkit.command.CommandSender
 import org.bukkit.entity.Player
-import org.bukkit.persistence.PersistentDataType
-import me.kizika.dice.Util.getColored
-import org.bukkit.inventory.ItemStack
 import org.bukkit.inventory.meta.ItemMeta
-import me.kizika.dice.Util.getNameSpaceKey
+import org.bukkit.persistence.PersistentDataType
 
 
 object CanTradeCommand :CommandExecutor {
