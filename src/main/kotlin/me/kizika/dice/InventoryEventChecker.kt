@@ -14,9 +14,11 @@ object InventoryEventChecker {
         val inv = p.cursor?.itemMeta?.persistentDataContainer?.get(key, PersistentDataType.INTEGER)
         val cli = p.currentItem?.itemMeta?.persistentDataContainer?.get(key, PersistentDataType.INTEGER)
         if (p.isShiftClick) {
-            if(cli==null||cli==0) {
-                p.isCancelled = true
-                return
+            if(!mine.contains(p.inventory.type)){
+                if(cli==null||cli==0) {
+                    p.isCancelled = true
+                    return
+                }
             }
         }
         if(p.cursor?.type != Material.AIR){
