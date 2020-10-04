@@ -1,0 +1,13 @@
+name: DicePlugin
+version: @version@
+main: me.kizika.dice.Dice
+api-version: 1.16
+
+commands:
+  dice:
+    usage: /<command> [max] [count]
+    description: Diceroll
+
+  cantrade:
+    usage: /<command> [switch]
+    description: Toggle whether or not it's tradable
