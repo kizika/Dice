@@ -9,7 +9,7 @@ import org.bukkit.persistence.PersistentDataType
 import me.kizika.dice.Util.getColored
 import org.bukkit.inventory.ItemStack
 import org.bukkit.inventory.meta.ItemMeta
-import org.bukkit.persistence.PersistentDataContainer
+import me.kizika.dice.Util.getNameSpaceKey
 
 
 object CanTradeCommand :CommandExecutor {
@@ -35,7 +35,7 @@ object CanTradeCommand :CommandExecutor {
         }
 
     private fun setCanTrade(MHMeta: ItemMeta, stat: Int): ItemMeta {
-        val key = Util.getNameSpaceKey("trade")
+        val key = getNameSpaceKey("trade")
         MHMeta.persistentDataContainer.set(key, PersistentDataType.INTEGER,stat)
         return MHMeta
     }
